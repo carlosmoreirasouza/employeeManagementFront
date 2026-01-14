@@ -59,7 +59,7 @@ export default function EmployeeForm({ initial = null, onSubmit, submitLabel = '
       birthDate: birthDate || null,
       role: role.trim(),
       // O backend deve receber e hashear a senha; aqui é enviado no campo passwordHash conforme solicitado.
-      passwordHash: password || '',
+      password: password || '',
       phone1: phone1.trim() || null,
       phone2: phone2.trim() || null
     }
