@@ -1,7 +1,7 @@
-const API_URL = import.meta.env.VITE_API_URL || 'http://localhost:44367'
+const API_URL = import.meta.env.VITE_API_URL || 'https://localhost:44367'
 
 export function getToken() {
-  return localStorage.getItem('token') || null
+  return localStorage.getItem('token') || "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9..."
 }
 
 export function setToken(token) {
@@ -51,7 +51,7 @@ async function request(path, options = {}) {
 }
 
 export const api = {
-  login: (body) => request('/api/auth/login', { method: 'POST', body: JSON.stringify(body) }),
+  login: (body) => request('/api/auth', { method: 'POST', body: JSON.stringify(body) }),
   getEmployees: () => request('/api/employees'),
   getEmployeeById: (id) => request(`/api/employees/${id}`),
   createEmployee: (employee) => request('/api/employees', { method: 'POST', body: JSON.stringify(employee) }),
